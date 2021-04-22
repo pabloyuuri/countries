@@ -1,0 +1,36 @@
+<aura:component controller="LEXPaises" implements="force:appHostable">
+    
+    <aura:attribute name="paises" type="List"/>
+    <aura:attribute name="loading" type="Boolean" default="true"/>
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}" />
+
+    <table class="header">
+        <p style="font-family:Arial; font-size:21px;">PAÍSES: BANDEIRA, NOME E SIGLAS</p>
+        
+
+    </table>
+    
+    <aura:if isTrue="{!v.loading}">
+		<lightning:card class="loading-card">
+            <aura:set attribute="title">
+            	
+            </aura:set>
+            <lightning:spinner size="medium" />
+        </lightning:card>
+    </aura:if>
+    
+    <table class="body">
+        <div class="slds-grid slds-wrap  slds-grid_align-center" style="width: 1000px; padding: 10px; position:relative; margin: auto;">
+            <aura:iteration items="{!v.paises}" var="pais">
+                <div class="slds-col slds-size_1-of-4" style="padding:10px !important">
+                    <c:pais pais="{!pais}" /> 
+                </div>
+            </aura:iteration>    
+        </div>
+    </table>
+    <table class="footer">
+    </table>
+    <table class="footer"></table>
+
+    
+</aura:component>

@@ -1,0 +1,15 @@
+<aura:component>
+    <aura:attribute name="pais" type="Object"/>
+    <aura:handler name="init" action="{!c.init}" value="{!this}"/>
+    
+    <div class="slds-card">
+                <div >
+                    <img src="{!v.pais.flag}" onclick="{!v.modal}" onerror="{!c.handleLoadImage}" aura:id="modal"/>
+                </div>
+            <div class="pais-info">
+                <h1 style="word-break: break-all;">{!v.pais.name}</h1>
+                <h1>{!v.pais.unicodeFlag}</h1>
+            </div>
+    </div>
+
+</aura:component>

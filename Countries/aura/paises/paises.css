@@ -1,0 +1,11 @@
+.THIS.header {
+    background:#202c38;
+    height:30px;
+    color:white;
+    box-shadow: 0 1px 4px gray;
+    text-align: center;
+}
+
+.THIS.loading-card {
+    height: 100vh;
+}
